@@ -1,0 +1,21 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+  <form method="post" action="<: uri_for('insert') :>">
+    <textarea name="text" rows="3" cols="100"></textarea>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>New text:) <: $latest_text :></h2>
+
+  <h3>Latest 20</h3>
+
+  : for $list -> $item {
+    <p><: $item.text :></p>
+    <p>Posted:<: $item.created_at :></p>
+    <hr>
+  : }
+
+
+: }

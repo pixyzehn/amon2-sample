@@ -8,4 +8,21 @@ __PACKAGE__->load_plugin('Count');
 __PACKAGE__->load_plugin('Replace');
 __PACKAGE__->load_plugin('Pager');
 
+sub latest_text {
+  my ($self) = @_;
+  my ($row) = $self->search('memos', {}, {order_by => {'id' => 'DESC'}, limit => 1});
+  return $row->get_column('text') if ($row);
+}
+
+sub insert_memo {
+  my ($self, $text) = @_;
+  $self->insert( 'memos', {text => $text});
+}
+
+sub fetch_text_list {
+  my ($self) = @_;
+  my @list = $self->search('memos', {}, {order_by => {'id' => 'DESC'}, limit => 20});
+  return \@list;
+}
+
 1;

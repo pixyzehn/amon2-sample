@@ -29,6 +29,7 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">amon2-sample</a>
             </div>
+            <!--
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
@@ -37,6 +38,7 @@
                     <li><a href="#">Link</a></li>
                 </ul>
             </div>
+            -->
         </div><!-- /.container -->
     </div><!-- /.navbar -->
     <div class="container">
